@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.*;
 
-import com.zluo.inforegx.jdo.HistoryJDO;
+import com.zluo.inforegx.dao.HistoryDAO;
 import com.zluo.inforegx.model.History;
 
 @SuppressWarnings("serial")
@@ -15,7 +15,7 @@ public class InforegxServlet extends HttpServlet {
 			throws IOException {
 		
 		
-		HistoryJDO jdo =new HistoryJDO();
+		HistoryDAO jdo =new HistoryDAO();
 		jdo.addHistory();
 		
 		resp.setContentType("text/plain");
