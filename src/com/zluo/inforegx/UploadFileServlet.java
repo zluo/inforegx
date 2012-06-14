@@ -8,18 +8,12 @@ import javax.servlet.http.*;
 
 import com.zluo.inforegx.dao.HistoryDAO;
 import com.zluo.inforegx.model.History;
-import com.zluo.inforegx.service.EmailService;
-import com.zluo.inforegx.service.IService;
 
 @SuppressWarnings("serial")
-public class InforegxServlet extends HttpServlet {
+public class UploadFileServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		
-		System.out.println("Before call send email");
-		IService service = new EmailService(); 
-		service.serve();
-		System.out.println("After call send email");
 		
 		HistoryDAO jdo =new HistoryDAO();
 		jdo.addHistory();
@@ -34,8 +28,6 @@ public class InforegxServlet extends HttpServlet {
 		{
 			resp.getWriter().println (h.getAccessDate());
 		}
-		
-
 		
 	}
 }

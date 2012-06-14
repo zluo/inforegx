@@ -8,9 +8,19 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Inforegx</servlet-name>
 		<servlet-class>com.zluo.inforegx.InforegxServlet</servlet-class>
 	</servlet>
+
+	<servlet>
+		<servlet-name>Upload</servlet-name>
+		<jsp-file>/jsp/upload.jsp</jsp-file>
+	</servlet>
+
 	<servlet-mapping>
 		<servlet-name>Inforegx</servlet-name>
 		<url-pattern>/inforegx</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Upload</servlet-name>
+		<url-pattern>/upload</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
