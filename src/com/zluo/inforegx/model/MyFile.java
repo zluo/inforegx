@@ -28,5 +28,16 @@ public class MyFile {
 		this.image = image;
 	}
 	public Blob getImage()              { return image; }
-    public void setImage(Blob image)    { this.image = image; }
+	public void setImage(Blob image)    { this.image = image; }
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Long getId() {
+		return id;
+	}
+
 }

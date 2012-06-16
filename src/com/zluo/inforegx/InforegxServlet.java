@@ -7,7 +7,9 @@ import java.util.List;
 import javax.servlet.http.*;
 
 import com.zluo.inforegx.dao.HistoryDAO;
+import com.zluo.inforegx.dao.MyFileDAO;
 import com.zluo.inforegx.model.History;
+import com.zluo.inforegx.model.MyFile;
 import com.zluo.inforegx.service.EmailService;
 import com.zluo.inforegx.service.IService;
 
@@ -24,18 +26,30 @@ public class InforegxServlet extends HttpServlet {
 		HistoryDAO jdo =new HistoryDAO();
 		jdo.addHistory();
 		
-		resp.setContentType("text/plain");
+		resp.setContentType("text/html");
 		
+		resp.getWriter().println("<html><body>");
 		resp.getWriter().println("Hello, world");
 		
 		List<History> collection = jdo.listHistory();
 		
 		for(History h: collection)
 		{
+			resp.getWriter().println ("<li>");
 			resp.getWriter().println (h.getAccessDate());
+			resp.getWriter().println ("</li>");
 		}
 		
-
+		MyFileDAO myFileDAO = new MyFileDAO();
+		List<MyFile> myFiles = myFileDAO.list();
+		resp.getWriter().println("<hr>");
 		
+		for(MyFile myFile: myFiles)
+		{
+			resp.getWriter().println ("<li>");
+			resp.getWriter().println ("<a href='xxx'>" +  myFile.getId() + "-" + myFile.getName() + "</a>");
+			resp.getWriter().println ("</li>");
+		}
+		resp.getWriter().println("</body></html>");
 	}
 }
