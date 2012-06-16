@@ -2,7 +2,7 @@
 <HTml>
 <HEAD><TITLE>Display file upload form to the user</TITLE></HEAD>  
  <BODY> <FORM  ENCTYPE="multipart/form-data" ACTION=
-"sinle_upload_page.jsp" METHOD=POST>
+"uploadHandler" METHOD=POST>
                 <br><br><br>
           <center><table>
                     <tr><center><td colspan="2"><p align=

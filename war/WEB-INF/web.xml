@@ -8,6 +8,10 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Inforegx</servlet-name>
 		<servlet-class>com.zluo.inforegx.InforegxServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>UploadHandler</servlet-name>
+		<servlet-class>com.zluo.inforegx.UploadFileServlet</servlet-class>
+	</servlet>
 
 	<servlet>
 		<servlet-name>Upload</servlet-name>
@@ -18,6 +22,12 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 		<servlet-name>Inforegx</servlet-name>
 		<url-pattern>/inforegx</url-pattern>
 	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UploadHandler</servlet-name>
+		<url-pattern>/uploadHandler</url-pattern>
+	</servlet-mapping>
+	
 	<servlet-mapping>
 		<servlet-name>Upload</servlet-name>
 		<url-pattern>/upload</url-pattern>
